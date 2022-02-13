@@ -51,11 +51,11 @@
                 </div>
                 <ul class="menu ml-auto">
                     <li>
-                        <a href="http://localhost:4200">Home</a>
+                        <a [routerLink]="'/'">Home</a>
                        
                     </li>
                     <li>
-                        <a href="product.html">Auction</a>
+                        <a [routerLink]="'/auction'">Auction</a>
                     </li>
                     <li>
                         <a href="#0">Pages</a>
@@ -65,36 +65,25 @@
                                 <a href="#0">My Account</a>
                                 <ul class="submenu">
                                     <li>
-                                        <a href="sign-up.html">Sign Up</a>
+                                        <a [routerLink]="'/register'">Sign Up</a>
                                     </li>
                                     <li>
-                                        <a href="sign-in.html">Sign In</a>
+                                        <a [routerLink]="'/login'">Sign In</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#0">Dashboard</a>
-                                <ul class="submenu">
-                                    <li>
-                                        <a href="dashboard.html">Admin Dashboard</a>
-                                    </li>
-                                    <li>
-                                        <a href="profile.html">Accountant Dashboard</a>
-                                    </li>
-                                    <li>
-                                        <a href="my-bid.html">User Dashboard</a>
-                                    </li>
-                                    
-                                </ul>
+                                <a [routerLink]="'/login'">Dashboard</a>
+                                
                             </li>
                             <li>
-                                <a href="about.html">About Us</a>
+                                <a [routerLink]="'/aboutus'">About Us</a>
                             </li>
                             
                         </ul>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a [routerLink]="'/contact'">Contact</a>
                     </li>
                 </ul>
                 <form class="search-form">
