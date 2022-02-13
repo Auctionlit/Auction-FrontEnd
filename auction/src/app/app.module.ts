@@ -15,6 +15,12 @@ import { RegisterComponent } from './Components/register/register.component';
 import { AuctionsComponent } from './Components/auctions/auctions.component';
 import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { ContactComponent } from './Components/contact/contact.component';
+import { CardsSliderComponent } from './Components/cards-slider/cards-slider.component';
+import { OwlModule } from 'ngx-owl-carousel';
+import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './Components/user-dashboard/user-dashboard.component';
+import { AccountantDashboardComponent } from './Components/accountant-dashboard/accountant-dashboard.component';
+
 
 
 @NgModule({
@@ -28,14 +34,19 @@ import { ContactComponent } from './Components/contact/contact.component';
     RegisterComponent,
     AuctionsComponent,
     AboutUsComponent,
-    ContactComponent
+    ContactComponent,
+    CardsSliderComponent,
+    AdminDashboardComponent,
+    UserDashboardComponent,
+    AccountantDashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BsDropdownModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    OwlModule
     
   
   ],
