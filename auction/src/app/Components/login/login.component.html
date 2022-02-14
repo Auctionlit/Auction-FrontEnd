@@ -1,13 +1,13 @@
 <app-navbar></app-navbar>
-<div style="margin-top: 500px"></div>
+
 <!-- ============= Account Section Starts Here =============-->
-<section class="account-section padding-bottom">
-    <div class="container">
-        <div class="account-wrapper mt--100 mt-lg--440">
+
+    <div class="container mt-lg--440 mt--100" style="margin-top:200px;">
+        <div class="account-wrapper ">
             <div class="left-side">
                 <div class="section-header">
                     <h2 class="title">HI, THERE</h2>
-                    <p>You can log in to your Sbidu account here.</p>
+                    <p>You can log in to your Antique Auction account here.</p>
                 </div>
                 <ul class="login-with">
                     <li>
@@ -38,16 +38,16 @@
                     </div>
                 </form>
             </div>
-            <div class="right-side cl-white">
+            <div class="right-side cl-white bg-primary">
                 <div class="section-header mb-0">
                     <h3 class="title mt-0">NEW HERE?</h3>
                     <p>Sign up and create your Account</p>
-                    <a href="sign-up.html" class="custom-button transparent">Sign Up</a>
+                    <a [routerLink]="'/register'" class="custom-button">Sign Up</a>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+   </div>
+ 
 <!--============= Account Section Ends Here ============= -->
 
 <app-footer> </app-footer>
