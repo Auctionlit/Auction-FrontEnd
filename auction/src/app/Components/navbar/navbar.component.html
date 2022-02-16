@@ -1,10 +1,10 @@
 <!--============= ScrollToTop Section Starts Here =============-->
-<div class="overlayer" id="overlayer">
+ <div class="overlayer" id="overlayer">
     <div class="loader">
         <div class="loader-inner"></div>
     </div>
 </div>
-<a href="#0" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
+<a href="#0" class="scrollToTop"><i class="fas fa-angle"></i></a>
 <div class="overlay"></div>
 <!--============= ScrollToTop Section Ends Here =============-->
 
@@ -21,12 +21,9 @@
                     <li>
                         <i class="fas fa-globe"></i>
                         <select name="language" class="select-bar">
-                            <option value="en">En</option>
-                            <option value="Bn">Bn</option>
-                            <option value="Rs">Rs</option>
-                            <option value="Us">Us</option>
-                            <option value="Pk">Pk</option>
-                            <option value="Arg">Arg</option>
+                            <option value="en">English</option>
+                            <option value="Bn">Arabic</option>
+                           
                         </select>
                     </li>
                 </ul>
@@ -46,7 +43,7 @@
             <div class="header-wrapper">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="assets/images/logo/logo.png" style="border-radius: 60%;width:85px;;" alt="logo">
+                        <img src="./../../../assets/images/logo/logo.png" style="border-radius: 60%;width:85px;" alt="logo">
                     </a>
                 </div>
                 <ul class="menu ml-auto">
@@ -65,15 +62,15 @@
                                 <a href="#0">My Account</a>
                                 <ul class="submenu">
                                     <li>
-                                        <a [routerLink]="'/register'">Sign Up</a>
+                                        <a [routerLink]="'/account/register'">Sign Up</a>
                                     </li>
                                     <li>
-                                        <a [routerLink]="'/login'">Sign In</a>
+                                        <a [routerLink]="'/account/login'">Sign In</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a [routerLink]="'/login'">Dashboard</a>
+                                <a [routerLink]="'/account/login'">Dashboard</a>
                                 
                             </li>
                             <li>

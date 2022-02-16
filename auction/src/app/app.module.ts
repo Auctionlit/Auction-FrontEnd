@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -20,7 +19,7 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './Components/user-dashboard/user-dashboard.component';
 import { AccountantDashboardComponent } from './Components/accountant-dashboard/accountant-dashboard.component';
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 @NgModule({
@@ -46,7 +45,9 @@ import { AccountantDashboardComponent } from './Components/accountant-dashboard/
     BsDropdownModule,
     NgbModule,
     BrowserAnimationsModule,
-    OwlModule
+    OwlModule,
+    CarouselModule 
+    
     
   
   ],

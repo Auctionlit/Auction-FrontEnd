@@ -17,43 +17,30 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash", "bryntum-gantt/gantt.lite.umd.js"
+            ],
             "outputPath": "dist/auction",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css",
-              "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",  
-              "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css" 
+              
+              "src/styles.css"
              
               
             ],
             "scripts": [
-              "src/assets/js/jquery-3.3.1.min.js",
-              "src/assets/js/modernizr-3.6.0.min.js",
-              "src/assets/js/plugins.js",
-              "src/assets/js/bootstrap.min.js",
-              "src/assets/js/isotope.pkgd.min.js",
-              "src/assets/js/wow.min.js",
-              "src/assets/js/waypoints.js",
-              "src/assets/js/nice-select.js",
-              "src/assets/js/counterup.min.js",
-              "src/assets/js/owl.min.js",
-              "src/assets/js/magnific-popup.min.js",
-              "src/assets/js/yscountdown.min.js",
-              "src/assets/js/jquery-ui.min.js",
-              "src/assets/js/main.js",
-              "./node_modules/jquery/dist/jquery.min.js",  
-             "./node_modules/owl.carousel/dist/owl.carousel.min.js",
-             "./node_modules/jquery/dist/jquery.js",
-             "./node_modules/bootstrap/dist/js/bootstrap.js"
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/owl.carousel/dist/owl.carousel.js",
+              
             ]
           },
           "configurations": {
@@ -61,13 +48,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "7mb",
+                  "maximumError": "8mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "400kb",
+                  "maximumError": "400kb"
                 }
               ],
               "fileReplacements": [
