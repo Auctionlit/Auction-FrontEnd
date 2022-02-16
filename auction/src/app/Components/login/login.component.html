@@ -20,23 +20,24 @@
                 <div class="or">
                     <span>Or</span>
                 </div>
-                <form class="login-form">
+                <div class="login-form">
+
                     <div class="form-group mb-30">
                         <label for="login-email"><i class="far fa-envelope"></i></label>
-                        <input type="text" id="login-email" placeholder="Email Address">
+                        <input [(ngModel)]= 'email'  type="text" id="email" placeholder="Email Address">
                     </div>
                     <div class="form-group">
                         <label for="login-pass"><i class="fas fa-lock"></i></label>
-                        <input type="password" id="login-pass" placeholder="Password">
+                        <input [(ngModel)]= 'password' type="password" id="password" placeholder="Password">
                         <span class="pass-type"><i class="fas fa-eye"></i></span>
                     </div>
                     <div class="form-group">
                         <a href="#0">Forgot Password?</a>
                     </div>
                     <div class="form-group mb-0">
-                        <button type="submit" class="custom-button">LOG IN</button>
+                        <button class="custom-button" (click) = 'authintication()'>LOG IN</button>
                     </div>
-                </form>
+                </div>
             </div>
             <div class="right-side cl-white bg-primary">
                 <div class="section-header mb-0">
