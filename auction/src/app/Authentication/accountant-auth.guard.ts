@@ -16,8 +16,7 @@ export class AccountantAuthGuard implements CanActivate {
       var roleName=localStorage.getItem('Role');
       if(roleName =='2')
            {  
-              //console.log("Access Denied this for Admin");
-              //this.router.navigate(['Dashboards/Admin']);
+              
               return true;
            }  
       else
