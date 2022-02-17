@@ -20,7 +20,9 @@ import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dash
 import { UserDashboardComponent } from './Components/user-dashboard/user-dashboard.component';
 import { AccountantDashboardComponent } from './Components/accountant-dashboard/accountant-dashboard.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     CardsSliderComponent,
     AdminDashboardComponent,
     UserDashboardComponent,
-    AccountantDashboardComponent
+    AccountantDashboardComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,11 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     NgbModule,
     BrowserAnimationsModule,
     OwlModule,
-    CarouselModule 
+    CarouselModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot({timeOut:2000,progressAnimation:"increasing"})
     
     
   
