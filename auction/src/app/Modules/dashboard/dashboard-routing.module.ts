@@ -7,9 +7,12 @@ import { AccountantDashboardComponent } from 'src/app/Components/accountant-dash
 import { AdminDashboardComponent } from 'src/app/Components/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from 'src/app/Components/user-dashboard/user-dashboard.component';
 
+
 const routes: Routes = [{path:'Admin',component:AdminDashboardComponent,canActivate:[AdminAuthGuard]},
 {path:'Accountant',component:AccountantDashboardComponent,canActivate:[AccountantAuthGuard]},
-{path:'User',component:UserDashboardComponent,canActivate:[UserAuthGuard]}];
+{path:'User',component:UserDashboardComponent,canActivate:[UserAuthGuard]}
+
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

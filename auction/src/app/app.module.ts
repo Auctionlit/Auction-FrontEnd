@@ -23,6 +23,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { PersonalProfileComponent } from './Components/personal-profile/personal-profile.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ToastrModule } from 'ngx-toastr';
     AdminDashboardComponent,
     UserDashboardComponent,
     AccountantDashboardComponent,
+    PersonalProfileComponent,
     
   ],
   imports: [
