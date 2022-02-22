@@ -10,7 +10,7 @@ export class ItemService {
   constructor(private http: HttpClient, private router: Router) {}
 
   inseritem(form: any) {
-    // form.imageinput=form.imageinput.name;
+    form.imageinput=this.imageName;
     this.http
       .post('https://localhost:44361/api/ItemAuction', form)
       .subscribe((res) => {
@@ -19,9 +19,9 @@ export class ItemService {
   }
   uploadImage(form: any) {
     this.http
-      .post('https://localhost:44318/api/student/uploadimage', form)
+      .post('https://localhost:44361/api/ItemAuction/uploadimage', form)
       .subscribe((res: any) => {
-        this.imageName = res;
+        this.imageName = res.imgPath;
         console.log(this.imageName);
       });
   }

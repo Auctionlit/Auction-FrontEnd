@@ -8,17 +8,19 @@ import { ItemService } from 'src/app/item.service';
   styleUrls: ['./insert-item-form-dialog.component.css']
 })
 export class InsertItemFormDialogComponent implements OnInit {
-
-
+  
+  imageName1:string='';
   form = new FormGroup({
     //<form></form>
     name: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required]),
-    startPrice: new FormControl('', [Validators.required]),
-    userId: new FormControl('', [Validators.required]),
-    endDate: new FormControl('', [Validators.required]),
-    imageinput: new FormControl('', [Validators.required]),
+    startprice: new FormControl('', [Validators.required]),
+    userid: new FormControl('', [Validators.required]),
+    end_date: new FormControl('', [Validators.required]),
+    imgpath:new FormControl('', [Validators.required]),
     catId: new FormControl('', [Validators.required]),
+    // imageName:new FormControl('',[Validators.required])
+
   });
   constructor(public item:ItemService) { }
 
@@ -35,6 +37,8 @@ export class InsertItemFormDialogComponent implements OnInit {
     console.log(file);
     formdata.append("file",uploadfile,uploadfile.name);
     this.item.uploadImage(formdata);
+    // this.imageName1=uploadfile.name;
+    console.log(uploadfile.name);
   }
 
 }
