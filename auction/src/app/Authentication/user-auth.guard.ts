@@ -15,7 +15,7 @@ export class UserAuthGuard implements CanActivate {
       
       var roleName=localStorage.getItem('Role');
       
-      if(roleName=='3')
+      if(roleName=='2')
            {  
               return true;
            }  

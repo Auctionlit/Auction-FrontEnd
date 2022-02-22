@@ -17,14 +17,19 @@
                         <div class="content">
                             <h6 class="title">{{uName}}</h6>
                             <button class="btn btn-danger" (click)='Logout()'>Logout</button>
+                          
+
                         </div>
                     </div>
                     <ul class="dashboard-menu">
                         <li>
-                            <a href="#0" class="active"><i class="flaticon-dashboard"></i>Admin Dashboard</a>
+                            <a class="active"><i class="flaticon-dashboard"></i>Admin Dashboard</a>
                         </li>
                         <li>
-                            <a href="profile.html"><i class="flaticon-settings"></i>Personal Profile </a>
+                            <a [routerLink]="'/dashboard/PersonlProfile'">
+                                <i class="flaticon-settings"></i>Personal Profile 
+                                <!-- <button id="btn1" class="btn btn-light" (click)="GetProfileData()"><i class="flaticon-settings"></i>Personal Profile </button> -->
+                            </a>
                         </li>
                         <li>
                             <a href="my-bid.html"><i class="flaticon-auction"></i>My Bids</a>

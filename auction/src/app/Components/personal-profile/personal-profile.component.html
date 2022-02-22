@@ -1,5 +1,7 @@
+<app-navbar> </app-navbar>
 <!--============= Dashboard Section Starts Here =============-->
-<section class="dashboard-section padding-bottom mt--240 mt-lg--440 pos-rel">
+<div class="bg_img hero-bg bottom_center" data-background="assets/images/banner/hero-bg.png"></div>
+<section class="dashboard-section padding-bottom pos-rel" style="margin-top: 250px;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-10 col-md-7 col-lg-4">
@@ -13,17 +15,15 @@
                             <input type="file" id="profile-pic" class="d-none">
                         </div>
                         <div class="content">
-                            <h5 class="title"><a href="#0">Percy Reed</a></h5>
-                            <span class="username"><a href="http://pixner.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f993969197b99e94989095d79a9694">[email&#160;protected]</a></span>
+                            <h6 class="title">{{uName}}</h6>
+                            <button class="btn btn-danger" (click)='Logout()'>Logout</button>
                         </div>
                     </div>
                     <ul class="dashboard-menu">
                         <li>
-                            <a href="dashboard.html"><i class="flaticon-dashboard"></i>Dashboard</a>
+                            <a [routerLink]="'/dashboard/Admin'"><i class="flaticon-dashboard"></i>Admin Dashboard</a>
                         </li>
-                        <li>
-                            <a href="#0" class="active"><i class="flaticon-settings"></i>Personal Profile </a>
-                        </li>
+                        
                         <li>
                             <a href="my-bid.html"><i class="flaticon-auction"></i>My Bids</a>
                         </li>
@@ -48,46 +48,24 @@
                         <div class="dash-pro-item mb-30 dashboard-widget">
                             <div class="header">
                                 <h4 class="title">Personal Details</h4>
-                                <span class="edit"><i class="flaticon-edit"></i> Edit</span>
                             </div>
                             <ul class="dash-pro-body">
                                 <li>
-                                    <div class="info-name">Name</div>
-                                    <div class="info-value">Albert Owens</div>
+                                    <div class="info-name"> Name</div>
+                                    <div class="info-value">{{x.firstName}}&nbsp;{{x.lastName}}</div>
                                 </li>
                                 <li>
-                                    <div class="info-name">Date of Birth</div>
-                                    <div class="info-value">15-03-1974</div>
+                                    <div class="info-name">Email</div>
+                                    <div class="info-value">{{x.email}}</div>
                                 </li>
                                 <li>
-                                    <div class="info-name">Address</div>
-                                    <div class="info-value">8198 Fieldstone Dr.La Crosse, WI 54601</div>
+                                    <div class="info-name">Phone</div>
+                                    <div class="info-value">{{x.phone}}</div>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="dash-pro-item mb-30 dashboard-widget">
-                            <div class="header">
-                                <h4 class="title">Account Settings</h4>
-                                <span class="edit"><i class="flaticon-edit"></i> Edit</span>
-                            </div>
-                            <ul class="dash-pro-body">
-                                <li>
-                                    <div class="info-name">Language</div>
-                                    <div class="info-value">English (United States)</div>
-                                </li>
-                                <li>
-                                    <div class="info-name">Time Zone</div>
-                                    <div class="info-value">(GMT-06:00) Central America</div>
-                                </li>
-                                <li>
-                                    <div class="info-name">Status</div>
-                                    <div class="info-value"><i class="flaticon-check text-success"></i> Active</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                     <div class="col-12">
                         <div class="dash-pro-item mb-30 dashboard-widget">
                             <div class="header">
@@ -97,7 +75,7 @@
                             <ul class="dash-pro-body">
                                 <li>
                                     <div class="info-name">Email</div>
-                                    <div class="info-value"><a href="http://pixner.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3d303e392e286f68651c3b313d3530723f3331">[email&#160;protected]</a></div>
+                                    <div class="info-value">{{x.email}}</div>
                                 </li>
                             </ul>
                         </div>
@@ -111,7 +89,7 @@
                             <ul class="dash-pro-body">
                                 <li>
                                     <div class="info-name">Mobile</div>
-                                    <div class="info-value">+1 234-567-8925</div>
+                                    <div class="info-value">{{x.phone}}</div>
                                 </li>
                             </ul>
                         </div>
@@ -125,7 +103,7 @@
                             <ul class="dash-pro-body">
                                 <li>
                                     <div class="info-name">Password</div>
-                                    <div class="info-value">xxxxxxxxxxxxxxxx</div>
+                                    <div class="info-value">xxxxxxxxxx</div>
                                 </li>
                             </ul>
                         </div>
@@ -137,3 +115,4 @@
 </section>
 <!--============= Dashboard Section Ends Here =============-->
 
+<app-footer> </app-footer>

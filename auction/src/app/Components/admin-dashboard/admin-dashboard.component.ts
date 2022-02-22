@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { PersonalProfileService } from 'src/app/personal-profile.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -12,19 +13,24 @@ export class AdminDashboardComponent implements OnInit {
  
 
   constructor(private router:Router) { 
-    this.uName=localStorage.getItem('username')
+    
     console.log("uName");
    
   }
 
   ngOnInit(): void {
+    this.uName=localStorage.getItem('username');
   }
 
   Logout()
   {
     localStorage.clear();              
-    this.router.navigate(['']);        
-    
+    this.router.navigate(['']);   
   }
+
+  // GetProfileData()
+  // {
+  //   this.uName=localStorage.getItem('username');
+  // }
 
 }
