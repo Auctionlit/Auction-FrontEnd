@@ -24,6 +24,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { PersonalProfileComponent } from './Components/personal-profile/personal-profile.component';
+import { InsertItemComponent } from './Components/insert-item/insert-item.component';
+import { InsertItemFormDialogComponent } from './Components/insert-item-form-dialog/insert-item-form-dialog.component';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,8 @@ import { PersonalProfileComponent } from './Components/personal-profile/personal
     UserDashboardComponent,
     AccountantDashboardComponent,
     PersonalProfileComponent,
+    InsertItemComponent,
+    InsertItemFormDialogComponent,
     
   ],
   imports: [
@@ -55,12 +61,13 @@ import { PersonalProfileComponent } from './Components/personal-profile/personal
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatDialogModule,
     ToastrModule.forRoot({timeOut:2000,progressAnimation:"increasing"})
     
     
   
   ],
-  providers: [],
+  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
