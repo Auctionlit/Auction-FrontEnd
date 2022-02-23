@@ -10,7 +10,8 @@ export class ItemService {
   constructor(private http: HttpClient, private router: Router) {}
 
   inseritem(form: any) {
-    form.imageinput=this.imageName;
+    form.imgpath=this.imageName;
+    form.catId = parseInt(form.catId);
     this.http
       .post('https://localhost:44361/api/ItemAuction', form)
       .subscribe((res) => {
