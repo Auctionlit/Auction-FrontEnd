@@ -32,11 +32,13 @@ export class AuthService {
           if (object.role == '1') {
             this.router.navigate(['dashboard/Admin/']);
           }
-          if (object.role == '21') {
-            this.router.navigate(['dashboard/Accountant/']);
-          }
+          
           if (object.role == '2') {
             this.router.navigate(['dashboard/User/']);
+          }
+          
+          if (object.role == '41') {
+            this.router.navigate(['dashboard/Accountant/']);
           }
         },
         (x) => {

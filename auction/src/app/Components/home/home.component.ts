@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemService } from 'src/app/item.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public item:ItemService) { 
+
+    this.item.GetCarsData();
+    this.item.GetCoinsData();
+    this.item.GetMostPopularData();
+    this.item.GetwatchesData();
+    this.item.GetJewelryData();
+
+
+  }
 
   ngOnInit(): void {
   }

@@ -12,7 +12,7 @@ export class AdminDashboardComponent implements OnInit {
   uName:string|any='';
  
 
-  constructor(private router:Router) { 
+  constructor(private router:Router,private perProfileService:PersonalProfileService) { 
     
     console.log("uName");
    
@@ -20,6 +20,8 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.uName=localStorage.getItem('username');
+    this.perProfileService.GetUsersDataByEmail();
+
   }
 
   Logout()

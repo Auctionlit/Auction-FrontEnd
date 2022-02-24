@@ -10,16 +10,22 @@ import { Router, RouterLink } from '@angular/router';
 export class PersonalProfileComponent implements OnInit {
 
   x:any={}
-  uName:string|any=localStorage.getItem('username');
+  uName:string|any;
   //this.uName=localStorage.getItem('username')
   constructor(public perProfileService:PersonalProfileService,private router:Router) { 
     
     this.x=perProfileService.userData;
+    this.uName=localStorage.getItem('username');
+    
     
     
   }
 
-  ngOnInit(): void {}  
+  ngOnInit(): void {
+    this.uName=localStorage.getItem('username');
+    //this.perProfileService.GetUsersDataByEmail();
+    
+  }  
 
   Logout()
   {
