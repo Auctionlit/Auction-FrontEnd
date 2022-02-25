@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     this.item.GetCarsData();
     this.item.GetCoinsData();
     this.item.GetMostPopularData();
-    this.item.GetwatchesData();
+    this.item.GetWatchesData();
     this.item.GetJewelryData();
 
 
