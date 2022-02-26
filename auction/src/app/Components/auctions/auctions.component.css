@@ -1,0 +1,6 @@
+::ng-deep .select-bar{
+    display:block !important;
+}
+::ng-deep .nice-select{
+    display:none !important;
+}

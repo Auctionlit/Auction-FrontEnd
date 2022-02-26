@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { IItem } from './Components/home/IItems';
@@ -13,6 +13,8 @@ export class ItemService {
   coins:string|any=[{}];
   watches:string|any=[{}];
   popular:string|any=[{}];
+  all:string|any=[{}];
+
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -81,6 +83,34 @@ export class ItemService {
       .subscribe((res: any) => {
         this.popular = res;
         console.log(this.popular);
+       
+      });
+    }
+    GetAllData(){
+      this.http
+      .get<IItem>('https://localhost:44361/api/ItemAuction/GetAllItems')
+      .subscribe((res: any) => {
+        this.all = res;
+        console.log(this.all);
+       
+      });
+    }
+    GetItemByCategory(name:string){
+      
+      this.http
+      .get<IItem>('https://localhost:44361/api/ItemAuction/GetItemByCategory/'+ name)
+      .subscribe((res: any) => {
+        this.all = res;
+        console.log(this.all);
+       
+      });
+    }
+    GetItemByName(name:string){
+      this.http
+      .get<IItem>('https://localhost:44361/api/ItemAuction/GetItemByName/'+ name)
+      .subscribe((res: any) => {
+        this.all = res;
+        console.log(this.all);
        
       });
     }
