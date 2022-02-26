@@ -15,6 +15,7 @@ export class ItemService {
   popular:string|any=[{}];
   all:string|any=[{}];
 
+  itemsByCatId:string|any=[{}];
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -67,7 +68,7 @@ export class ItemService {
       });
     }
 
-    GetwatchesData(){
+    GetWatchesData(){
       this.http
       .get<IItem>('https://localhost:44361/api/ItemAuction/GetTopWatches')
       .subscribe((res: any) => {
@@ -96,7 +97,6 @@ export class ItemService {
       });
     }
     GetItemByCategory(name:string){
-      
       this.http
       .get<IItem>('https://localhost:44361/api/ItemAuction/GetItemByCategory/'+ name)
       .subscribe((res: any) => {
@@ -111,6 +111,15 @@ export class ItemService {
       .subscribe((res: any) => {
         this.all = res;
         console.log(this.all);
+      });
+    }
+
+    GetAllItemByCategoryId(catId:number){
+      this.http
+      .get<IItem>('https://localhost:44361/api/ItemAuction/' + catId )
+      .subscribe((res: any) => {
+        this.itemsByCatId = res;
+        console.log(this.itemsByCatId);
        
       });
     }

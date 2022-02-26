@@ -1,0 +1,78 @@
+<!--============= ScrollToTop Section Starts Here =============-->
+<div class="overlayer" id="overlayer">
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+</div>
+<a href="#0" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
+<div class="overlay"></div>
+<!--============= ScrollToTop Section Ends Here =============-->
+<app-navbar></app-navbar>
+
+<!--============= Coins and Bullion Auction Section Starts Here =============-->
+<div class="bg_img hero-bg bottom_center " data-background="assets/images/banner/hero-bg.png"></div>
+<section class="coins-and-bullion-auction-section padding-bottom padding-top pos-rel pb-max-xl-0" id="coins">
+    <div class="jewelry-bg d-none d-xl-block"><img src="./../../../assets/images/auction/coins/coin-bg.png" alt="coin"></div>
+    <div class="container "style="margin-top:100px;">
+        <div class="section-header-3">
+            <div class="left">
+                
+                <div class="title-area">
+                    <h2 class="title text-white">Coins & Bullion</h2>
+                    <p class="text-white">Discover rare, foreign, & ancient coins that are worth collecting</p>
+                </div>
+            </div>
+            <a href="#coins" class="normal-button">Back</a>
+        </div>
+        <div class="row justify-content-center mb-30-none" >
+            <div class="col-sm-10 col-md-6 col-lg-4" *ngFor="let item of item.itemsByCatId">
+                <div class="auction-item-2">
+                    <div class="auction-thumb">
+                        <a href="product-details.html"><img src="./../../../assets/img/{{item.imgPath}}" alt="coins"></a>
+                        <a href="#0" class="rating"><i class="far fa-star"></i></a>
+                        <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
+                    </div>
+                    <div class="auction-content">
+                        <h6 class="title">
+                            <a href="product-details.html">{{item.name}}</a>
+                        </h6>
+                        <div class="bid-area">
+                            <div class="bid-amount">
+                                <div class="icon">
+                                    <i class="flaticon-auction"></i>
+                                </div>
+                                <div class="amount-content">
+                                    <div class="current">Current Bid</div>
+                                    <div class="amount">{{item.startPrice}}</div>
+                                </div>
+                            </div>
+                            <div class="bid-amount">
+                                <div class="icon">
+                                    <i class="flaticon-money"></i>
+                                </div>
+                                <div class="amount-content">
+                                    <div class="current">Buy Now</div>
+                                    <div class="amount">{{item.startPrice}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="countdown-area">
+                            <div class="countdown">
+                                <div id="bid_counter17"></div>
+                            </div>
+                            <span class="total-bids">30 Bids</span>
+                        </div>
+                        <div class="text-center">
+                            <a href="#0" class="custom-button">Submit a bid</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+    
+</section>
+<!--============= Coins and Bullion Auction Section Ends Here =============-->
+
+<app-footer> </app-footer>

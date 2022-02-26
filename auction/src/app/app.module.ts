@@ -28,6 +28,10 @@ import { InsertItemComponent } from './Components/insert-item/insert-item.compon
 import { InsertItemFormDialogComponent } from './Components/insert-item-form-dialog/insert-item-form-dialog.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CarsComponent } from './Components/items/cars/cars.component';
+import { WatchesComponent } from './Components/items/watches/watches.component';
+import { CoinsComponent } from './Components/items/coins/coins.component';
+import { JewelryComponent } from './Components/items/jewelry/jewelry.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +52,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     PersonalProfileComponent,
     InsertItemComponent,
     InsertItemFormDialogComponent,
+    CarsComponent,
+    WatchesComponent,
+    CoinsComponent,
+    JewelryComponent,
     
   ],
   imports: [
