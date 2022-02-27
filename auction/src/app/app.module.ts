@@ -32,6 +32,7 @@ import { CarsComponent } from './Components/items/cars/cars.component';
 import { WatchesComponent } from './Components/items/watches/watches.component';
 import { CoinsComponent } from './Components/items/coins/coins.component';
 import { JewelryComponent } from './Components/items/jewelry/jewelry.component';
+import { InsertBidComponent } from './Components/insert-bid/insert-bid.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { JewelryComponent } from './Components/items/jewelry/jewelry.component';
     WatchesComponent,
     CoinsComponent,
     JewelryComponent,
+    InsertBidComponent,
     
   ],
   imports: [

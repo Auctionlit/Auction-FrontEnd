@@ -123,5 +123,15 @@ export class ItemService {
        
       });
     }
-  
+  insertbid(form:any){
+    form.userId = parseInt(form.userId);
+    form.itemId = parseInt(form.itemId)
+    console.log('done' , form);
+    this.http
+      .post('https://localhost:44361/api/bid',form)
+      .subscribe((res: any) => {
+        console.log(true);
+       
+      });
+  }
 }

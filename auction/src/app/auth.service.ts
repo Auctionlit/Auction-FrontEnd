@@ -29,6 +29,7 @@ export class AuthService {
           console.log(object)
           localStorage.setItem('Role', object.role);
           localStorage.setItem('username', object.unique_name);
+          localStorage.setItem('userId',object.given_name);
           if (object.role == '1') {
             this.router.navigate(['dashboard/Admin/']);
           }
