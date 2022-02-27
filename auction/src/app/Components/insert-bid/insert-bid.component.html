@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Insert a Bid</h2>
+<mat-dialog-content class="mat-typography">
+    <form class="login-form" [formGroup]="form" (ngSubmit)="getvalue()">
+        <div class="form-group mb-30">
+            <label for="login-Fname"><i class="far fa-envelope"></i></label>
+            <input type="number" id="login-Fname" placeholder="Biding Price" formControlName="price" required>
+        </div>
+        <div class="form-group mb-30">
+            <input type="number" id="login-email" formControlName="userId" hidden>
+        </div>
+        <div class="form-group mb-30">
+            <input type="number" id="login-email" formControlName="itemId" hidden>
+        </div>      
+        <div class="form-group mb-0">
+            <button type="submit" class="custom-button">Register</button>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

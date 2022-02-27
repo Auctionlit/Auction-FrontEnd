@@ -129,6 +129,7 @@ export class ItemService {
        
       });
     }
+<<<<<<< HEAD
 
 
      GetUserIdByEmail(uEmail:string|any)
@@ -161,4 +162,17 @@ export class ItemService {
 
     
   
+=======
+  insertbid(form:any){
+    form.userId = parseInt(form.userId);
+    form.itemId = parseInt(form.itemId)
+    console.log('done' , form);
+    this.http
+      .post('https://localhost:44361/api/bid',form)
+      .subscribe((res: any) => {
+        console.log(true);
+       
+      });
+  }
+>>>>>>> b6eb91ff6ee3733b30eaaf98a0d27d61fa844b9b
 }
