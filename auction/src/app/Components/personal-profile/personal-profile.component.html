@@ -17,6 +17,7 @@
                         <div class="content">
                             <h6 class="title">{{uName}}</h6>
                             <button class="btn btn-danger" (click)='Logout()'>Logout</button>
+                            
                         </div>
                     </div>
                     <ul class="dashboard-menu">
@@ -48,6 +49,7 @@
                         <div class="dash-pro-item mb-30 dashboard-widget">
                             <div class="header">
                                 <h4 class="title">Personal Details</h4>
+                                <span class="edit"><button mat-button (click)="OpenUpdateDialog()"><i class="flaticon-edit"></i> Edit</button></span>
                             </div>
                             <ul class="dash-pro-body">
                                 <li>
@@ -66,52 +68,13 @@
                         </div>
                     </div>
                     
-                    <div class="col-12">
-                        <div class="dash-pro-item mb-30 dashboard-widget">
-                            <div class="header">
-                                <h4 class="title">Email Address</h4>
-                                <span class="edit"><i class="flaticon-edit"></i> Edit</span>
-                            </div>
-                            <ul class="dash-pro-body">
-                                <li>
-                                    <div class="info-name">Email</div>
-                                    <div class="info-value">{{x.email}}</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="dash-pro-item mb-30 dashboard-widget">
-                            <div class="header">
-                                <h4 class="title">Phone</h4>
-                                <span class="edit"><i class="flaticon-edit"></i> Edit</span>
-                            </div>
-                            <ul class="dash-pro-body">
-                                <li>
-                                    <div class="info-name">Mobile</div>
-                                    <div class="info-value">{{x.phone}}</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="dash-pro-item dashboard-widget">
-                            <div class="header">
-                                <h4 class="title">Security</h4>
-                                <span class="edit"><i class="flaticon-edit"></i> Edit</span>
-                            </div>
-                            <ul class="dash-pro-body">
-                                <li>
-                                    <div class="info-name">Password</div>
-                                    <div class="info-value">xxxxxxxxxx</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+<!--*************************************-->
+
 </section>
 <!--============= Dashboard Section Ends Here =============-->
 

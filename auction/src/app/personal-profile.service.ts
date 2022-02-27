@@ -21,7 +21,8 @@ userEmail=localStorage.getItem('username');
 
   GetUsersDataByEmail()
   {
-     this.http.get<IPersonalProfile[]>('https://localhost:44361/api/users/' + this.userEmail).subscribe((result)=>{this.userData=result })
+     this.http.get<IPersonalProfile[]>('https://localhost:44361/api/users/GetUserByEmail/' + this.userEmail)
+     .subscribe((result)=>{this.userData=result })
   }
 
 

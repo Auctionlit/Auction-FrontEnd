@@ -2,7 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { IItem } from './Components/home/IItems';
-
+import { UpdateUserFromDialogComponent } from './Components/update-user-from-dialog/update-user-from-dialog.component';
+import { PersonalProfileService } from './personal-profile.service';
 @Injectable({
   providedIn: 'root',
 })
@@ -14,10 +15,15 @@ export class ItemService {
   watches:string|any=[{}];
   popular:string|any=[{}];
   all:string|any=[{}];
-
+  userID:string='';
   itemsByCatId:string|any=[{}];
 
-  constructor(private http: HttpClient, private router: Router) {}
+  uEmail=localStorage.getItem("username");
+
+  constructor(private http: HttpClient, private router: Router) {
+    console.log("Email in constructor is:" + this.uEmail)
+    this.GetUserIdByEmail(this.uEmail);
+  }
 
   inseritem(form: any) {
     form.imgpath=this.imageName;
@@ -41,7 +47,7 @@ export class ItemService {
 
   GetCarsData(){
     this.http
-    .get<IItem>('https://localhost:44361/api/ItemAuction/getTopCars')
+    .get<IItem[]>('https://localhost:44361/api/ItemAuction/getTopCars')
     .subscribe((res: any) => {
       this.cars = res;
       console.log(this.cars);
@@ -51,7 +57,7 @@ export class ItemService {
 
   GetJewelryData(){
     this.http
-    .get<IItem>('https://localhost:44361/api/ItemAuction/GetTopJewelry')
+    .get<IItem[]>('https://localhost:44361/api/ItemAuction/GetTopJewelry')
     .subscribe((res: any) => {
       this.jewelry = res;
       console.log(this.jewelry);
@@ -60,7 +66,7 @@ export class ItemService {
   }
     GetCoinsData(){
       this.http
-      .get<IItem>('https://localhost:44361/api/ItemAuction/GetTopCoins')
+      .get<IItem[]>('https://localhost:44361/api/ItemAuction/GetTopCoins')
       .subscribe((res: any) => {
         this.coins = res;
         console.log(this.coins);
@@ -70,7 +76,7 @@ export class ItemService {
 
     GetWatchesData(){
       this.http
-      .get<IItem>('https://localhost:44361/api/ItemAuction/GetTopWatches')
+      .get<IItem[]>('https://localhost:44361/api/ItemAuction/GetTopWatches')
       .subscribe((res: any) => {
         this.watches = res;
         console.log(this.watches);
@@ -80,7 +86,7 @@ export class ItemService {
 
     GetMostPopularData(){
       this.http
-      .get<IItem>('https://localhost:44361/api/ItemAuction/getMostPopular')
+      .get<IItem[]>('https://localhost:44361/api/ItemAuction/getMostPopular')
       .subscribe((res: any) => {
         this.popular = res;
         console.log(this.popular);
@@ -89,7 +95,7 @@ export class ItemService {
     }
     GetAllData(){
       this.http
-      .get<IItem>('https://localhost:44361/api/ItemAuction/GetAllItems')
+      .get<IItem[]>('https://localhost:44361/api/ItemAuction/GetAllItems')
       .subscribe((res: any) => {
         this.all = res;
         console.log(this.all);
@@ -98,7 +104,7 @@ export class ItemService {
     }
     GetItemByCategory(name:string){
       this.http
-      .get<IItem>('https://localhost:44361/api/ItemAuction/GetItemByCategory/'+ name)
+      .get<IItem[]>('https://localhost:44361/api/ItemAuction/GetItemByCategory/'+ name)
       .subscribe((res: any) => {
         this.all = res;
         console.log(this.all);
@@ -107,7 +113,7 @@ export class ItemService {
     }
     GetItemByName(name:string){
       this.http
-      .get<IItem>('https://localhost:44361/api/ItemAuction/GetItemByName/'+ name)
+      .get<IItem[]>('https://localhost:44361/api/ItemAuction/GetItemByName/'+ name)
       .subscribe((res: any) => {
         this.all = res;
         console.log(this.all);
@@ -116,12 +122,43 @@ export class ItemService {
 
     GetAllItemByCategoryId(catId:number){
       this.http
-      .get<IItem>('https://localhost:44361/api/ItemAuction/' + catId )
+      .get<IItem[]>('https://localhost:44361/api/ItemAuction/' + catId )
       .subscribe((res: any) => {
         this.itemsByCatId = res;
         console.log(this.itemsByCatId);
        
       });
     }
+
+
+     GetUserIdByEmail(uEmail:string|any)
+     {
+      this.http
+      .get('https://localhost:44361/api/users/GetUserIdByEmail/'+ uEmail)
+      .subscribe((res: any) => {
+        this.userID = res;
+        console.log(this.userID);
+      });
+
+     }
+
+      UpdateUserProfileById(form:any){
+        form.userid=this.userID;
+        console.log("*****************" + form.userid);
+        const headersDisc={
+          'content-type':'application/json',
+          'Accept':'application/json'
+        };
+        const requestOptions={
+          headers:new HttpHeaders(headersDisc),
+        };
+          
+        this.http.put('https://localhost:44361/api/users/UpdateUserProfile',form,requestOptions)
+        .subscribe((res)=>{
+        console.log("User Profile Updated**");
+        });
+    }
+
+    
   
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { InsertItemFormDialogComponent } from '../insert-item-form-dialog/insert-item-form-dialog.component';
-
+import { UpdateUserFromDialogComponent } from '../update-user-from-dialog/update-user-from-dialog.component';
 @Component({
   selector: 'app-insert-item',
   templateUrl: './insert-item.component.html',
@@ -19,4 +19,8 @@ export class InsertItemComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  
+  
+  
 }
