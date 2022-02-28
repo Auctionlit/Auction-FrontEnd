@@ -32,11 +32,8 @@ import { CarsComponent } from './Components/items/cars/cars.component';
 import { WatchesComponent } from './Components/items/watches/watches.component';
 import { CoinsComponent } from './Components/items/coins/coins.component';
 import { JewelryComponent } from './Components/items/jewelry/jewelry.component';
-<<<<<<< HEAD
 import { UpdateUserFromDialogComponent } from './/Components/update-user-from-dialog/update-user-from-dialog.component';
-=======
 import { InsertBidComponent } from './Components/insert-bid/insert-bid.component';
->>>>>>> b6eb91ff6ee3733b30eaaf98a0d27d61fa844b9b
 
 @NgModule({
   declarations: [
@@ -61,11 +58,8 @@ import { InsertBidComponent } from './Components/insert-bid/insert-bid.component
     WatchesComponent,
     CoinsComponent,
     JewelryComponent,
-<<<<<<< HEAD
-    UpdateUserFromDialogComponent
-=======
-    InsertBidComponent,
->>>>>>> b6eb91ff6ee3733b30eaaf98a0d27d61fa844b9b
+    UpdateUserFromDialogComponent,
+    InsertBidComponent
     
   ],
   imports: [
