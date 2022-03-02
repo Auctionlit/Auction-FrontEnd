@@ -61,7 +61,8 @@ import { AddNewEmployeeComponent } from './Components/add-new-employee/add-new-e
     JewelryComponent,
     UpdateUserFromDialogComponent,
     InsertBidComponent,
-    AddNewEmployeeComponent
+    AddNewEmployeeComponent,
+    InsertBidComponent
     
   ],
   imports: [

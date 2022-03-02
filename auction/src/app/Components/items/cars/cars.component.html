@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="amount-content">
                                     <div class="current">Current Bid</div>
-                                    <div class="amount">{{item.startPrice}}</div>
+                                    <div class="amount">${{item.maxPrice}}</div>
                                 </div>
                             </div>
                             <div class="bid-amount">
@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="amount-content">
                                     <div class="current">Buy Now</div>
-                                    <div class="amount">{{item.startPrice}}</div>
+                                    <div class="amount">${{item.startPrice}}</div>
                                 </div>
                             </div>
                         </div>
@@ -60,10 +60,10 @@
                             <div class="countdown">
                                 <div id="bid_counter26"></div>
                             </div>
-                            <span class="total-bids">30 Bids</span>
+                            <span class="total-bids">{{item.numOfBids}} Bids</span>
                         </div>
                         <div class="text-center">
-                            <a href="#0" class="custom-button">Submit a bid</a>
+                            <button class="custom-button" (click)="openDialog(item.id)">Submit a bid</button>
                         </div>
                     </div>
                 </div>

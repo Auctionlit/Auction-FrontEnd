@@ -3,16 +3,16 @@
     <form class="login-form" [formGroup]="form" (ngSubmit)="getvalue()">
         <div class="form-group mb-30">
             <label for="login-Fname"><i class="far fa-envelope"></i></label>
-            <input type="number" id="login-Fname" placeholder="Biding Price" formControlName="price" required>
+            <input type="number" id="Fname" placeholder="Biding Price" formControlName="price" required>
         </div>
         <div class="form-group mb-30">
-            <input type="number" id="login-email" formControlName="userId" hidden>
+            <input type="number" id="userId" formControlName="userId" hidden>
         </div>
         <div class="form-group mb-30">
-            <input type="number" id="login-email" formControlName="itemId" hidden>
+            <input type="number" id="ItemId" formControlName="itemId" hidden>
         </div>      
         <div class="form-group mb-0">
-            <button type="submit" class="custom-button">Register</button>
+            <button type="submit" class="custom-button" mat-dialog-close>Register</button>
         </div>
     </form>
 </mat-dialog-content>

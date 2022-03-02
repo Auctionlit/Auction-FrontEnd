@@ -9,4 +9,6 @@ export interface IItem{
    catid:number;
    userid:number;
    createddate:Date;
+   numOfBids:number;
+   maxPrice:number;
 }
