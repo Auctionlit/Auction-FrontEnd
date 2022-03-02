@@ -18,4 +18,15 @@ export class RegisterService {
     }    
     });
   }
+
+
+  InsertEmployee(form: any) {
+    this.http.post('https://localhost:44361/api/users', form).subscribe((res) => {
+    if(res == true){
+      console.log("New Employee Inserted");    
+    }else{
+      console.log("Try again");
+    }    
+    });
+  }
 }

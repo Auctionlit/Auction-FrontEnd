@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { ItemService } from 'src/app/item.service';
 import { PersonalProfileService } from 'src/app/personal-profile.service';
 
 @Component({
@@ -10,17 +11,26 @@ import { PersonalProfileService } from 'src/app/personal-profile.service';
 export class AdminDashboardComponent implements OnInit {
 
   uName:string|any='';
- 
+  adminDashStatistics:string|any;
+  profileDisplay=true;
+  EmpFormDisplay=true;
 
-  constructor(private router:Router,private perProfileService:PersonalProfileService) { 
+  constructor(private router:Router,public item:ItemService,private perProfileService:PersonalProfileService) { 
     
     console.log("uName");
-   
+    item.GetItemBidsStatistics_AdminDash();
+    item.GetBidPriceAndExpireDate_AdminDash();
+    item.GetCategoryNameAndNumberOfBids_AdminDash();
+    item.GetNoOfItemsNotInBid_AdminDash();
+    item.GetNoOfItemsInBid_AdminDash();
+    
   }
 
   ngOnInit(): void {
     this.uName=localStorage.getItem('username');
     this.perProfileService.GetUsersDataByEmail();
+    
+    
 
   }
 
@@ -30,9 +40,19 @@ export class AdminDashboardComponent implements OnInit {
     this.router.navigate(['']);   
   }
 
-  // GetProfileData()
-  // {
-  //   this.uName=localStorage.getItem('username');
-  // }
+  DisplayProfileData()
+  {
+    this.profileDisplay=false;
+  }
 
+  HideProfileAndEmpData()
+  {
+    this.profileDisplay=true;
+    this.EmpFormDisplay=true;
+  }
+
+  AddNewEmployee()
+  {
+     this.EmpFormDisplay=false;
+  }
 }

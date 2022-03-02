@@ -15,7 +15,8 @@ export class HomeComponent implements OnInit {
     this.item.GetMostPopularData();
     this.item.GetWatchesData();
     this.item.GetJewelryData();
-
+    
+    
 
   }
 

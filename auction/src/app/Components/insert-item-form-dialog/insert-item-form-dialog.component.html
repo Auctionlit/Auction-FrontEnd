@@ -1,3 +1,4 @@
+<div class="dash-pro-item dashboard-widget">
 <h2 mat-dialog-title>Insert Item</h2>
 <mat-dialog-content class="mat-typography">
     <form class="login-form" [formGroup]="form" (ngSubmit)="getvalue()">
@@ -42,11 +43,12 @@
         </div>
         
         <div class="form-group mb-0">
-            <button type="submit" class="custom-button">Register</button>
+            <button type="submit" class="custom-button">Add Item for auction</button>
         </div>
     </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Close</button>
+    <button class="btn-button bg-danger text-white" mat-dialog-close >Close</button>
 </mat-dialog-actions>
 
+</div>

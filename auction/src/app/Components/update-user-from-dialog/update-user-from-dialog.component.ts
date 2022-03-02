@@ -10,6 +10,7 @@ import { ItemService } from 'src/app/item.service';
 })
 export class UpdateUserFromDialogComponent implements OnInit {
   
+  
   form = new FormGroup({
     
     email: new FormControl('', [Validators.required]),
@@ -17,12 +18,16 @@ export class UpdateUserFromDialogComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
     userid: new FormControl('', [Validators.required])
   });
+ 
 
   constructor(public item:ItemService) {
     // const dialogRef = this.updateDialog.open(UpdateUserFromDialogComponent );
     // dialogRef.close(); 
-
     
+    this.form.value.userid=item.userID;
+    console.log("userid in form value is:" + this.form.value.userid);
+
+   
     
    }
 

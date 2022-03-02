@@ -17,12 +17,17 @@ export class ItemService {
   all:string|any=[{}];
   userID:string='';
   itemsByCatId:string|any=[{}];
+  adminDashbard1:string|any=[{}];
+  adminDashbard2:string|any=[{}];
+  adminDashbard3:string|any=[{}];
+  adminDashbard4:string|any={};
+  adminDashbard5:string|any={};
 
   uEmail=localStorage.getItem("username");
 
   constructor(private http: HttpClient, private router: Router) {
     console.log("Email in constructor is:" + this.uEmail)
-    this.GetUserIdByEmail(this.uEmail);
+    //this.GetUserIdByEmail(this.uEmail);
   }
 
   inseritem(form: any) {
@@ -129,15 +134,14 @@ export class ItemService {
        
       });
     }
-<<<<<<< HEAD
 
 
-     GetUserIdByEmail(uEmail:string|any)
+     GetUserIdByEmail(uEmail:any)
      {
       this.http
       .get('https://localhost:44361/api/users/GetUserIdByEmail/'+ uEmail)
       .subscribe((res: any) => {
-        this.userID = res;
+        this.userID = res.userId;
         console.log(this.userID);
       });
 
@@ -145,7 +149,7 @@ export class ItemService {
 
       UpdateUserProfileById(form:any){
         form.userid=this.userID;
-        console.log("*****************" + form.userid);
+        console.log("*****************" + this.userID);
         const headersDisc={
           'content-type':'application/json',
           'Accept':'application/json'
@@ -157,12 +161,12 @@ export class ItemService {
         this.http.put('https://localhost:44361/api/users/UpdateUserProfile',form,requestOptions)
         .subscribe((res)=>{
         console.log("User Profile Updated**");
+        alert("User Profile Updated");
         });
     }
 
     
   
-=======
   insertbid(form:any){
     form.userId = parseInt(form.userId);
     form.itemId = parseInt(form.itemId)
@@ -174,5 +178,59 @@ export class ItemService {
        
       });
   }
->>>>>>> b6eb91ff6ee3733b30eaaf98a0d27d61fa844b9b
+
+
+
+  GetItemBidsStatistics_AdminDash()
+     {
+      this.http
+      .get('https://localhost:44361/api/bid/GetItemBidsStatistics_AdminDash')
+      .subscribe((res1: any) => {
+        this.adminDashbard1 = res1;
+        console.log(this.adminDashbard1);
+      });
+
+     }
+
+
+     GetBidPriceAndExpireDate_AdminDash()
+     {
+      this.http
+      .get('https://localhost:44361/api/bid/GetBidPriceAndExpireDate_AdminDash')
+      .subscribe((res2: any) => {
+        this.adminDashbard2 = res2;
+        console.log(this.adminDashbard2);
+      });
+     }
+
+     GetCategoryNameAndNumberOfBids_AdminDash()
+     {
+      this.http
+      .get('https://localhost:44361/api/bid/GetCategoryNameAndNumberOfBids_AdminDash')
+      .subscribe((res3: any) => {
+        this.adminDashbard3 = res3;
+        console.log(this.adminDashbard3);
+      });
+     }
+
+
+     GetNoOfItemsNotInBid_AdminDash()
+     {
+      this.http
+      .get('https://localhost:44361/api/bid/GetNoOfItemsNotInBid_AdminDash')
+      .subscribe((res4: any) => {
+        this.adminDashbard4 = res4;
+        console.log(this.adminDashbard4);
+      });
+     }
+
+     GetNoOfItemsInBid_AdminDash()
+     {
+      this.http
+      .get('https://localhost:44361/api/bid/GetNoOfItemsInBid_AdminDash')
+      .subscribe((res5: any) => {
+        this.adminDashbard5 = res5;
+        console.log(this.adminDashbard5);
+      });
+     }
 }

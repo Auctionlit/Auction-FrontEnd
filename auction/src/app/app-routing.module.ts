@@ -12,12 +12,11 @@ import { RegisterComponent } from './Components/register/register.component';
 const routes: Routes = [
 
 
-{path:'auction',component:AuctionsComponent},
 
-
-{path:'dashboard',loadChildren:()=>(import('./Modules/dashboard/dashboard.module').then((x)=>x.DashboardModule))},
 {path:'',loadChildren:()=>(import('./Modules/home/home.module').then((x)=>x.HomeModule))},
-{path:'account',loadChildren:()=>(import('./Modules/account/account.module').then((x)=>x.AccountModule))}
+{path:'dashboard',loadChildren:()=>(import('./Modules/dashboard/dashboard.module').then((x)=>x.DashboardModule))},
+{path:'account',loadChildren:()=>(import('./Modules/account/account.module').then((x)=>x.AccountModule))},
+{path:'auction',component:AuctionsComponent}
 
 ];
 
