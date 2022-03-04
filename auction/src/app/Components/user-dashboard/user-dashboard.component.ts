@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { ItemService } from 'src/app/item.service';
 import { PersonalProfileService } from 'src/app/personal-profile.service';
 
 @Component({
@@ -12,9 +13,10 @@ export class UserDashboardComponent implements OnInit {
   uName:string|any='';
   profileDisplay=true;
   newItemDisplay=true;
+  paymentMethodDisplay=true;
  
 
-  constructor(private router:Router,private perProfileService:PersonalProfileService) { 
+  constructor(private router:Router,private perProfileService:PersonalProfileService,private item:ItemService) { 
     this.uName=localStorage.getItem('username')
     console.log("uName");
    
@@ -34,17 +36,26 @@ export class UserDashboardComponent implements OnInit {
   DisplayProfileData()
   {
     this.profileDisplay=false;
+    // this.item.GetUserIdByEmail("uName");
+    
   }
 
   HideProfileAndItemData()
     {
     this.profileDisplay=true;
     this.newItemDisplay=true;
+    this.paymentMethodDisplay=true;
   }
 
-  AddNewItem(){
+  DispalyAddNewItem(){
     this.newItemDisplay=false;
 
+  }
+  DisplayPaymentMethod()
+  {
+    this.paymentMethodDisplay=false;
+    // this.item.GetUserIdByEmail("uName");
+    
   }
 
 }

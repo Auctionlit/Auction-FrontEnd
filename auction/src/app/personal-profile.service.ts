@@ -16,6 +16,8 @@ userEmail=localStorage.getItem('username');
     //this.GetUsersDataByEmail();
     console.log("Email is:" + this.userEmail);
     console.log(this.userData);
+    this.GetUsersDataByEmail();
+
    }
 
 

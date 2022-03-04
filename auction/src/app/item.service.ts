@@ -16,7 +16,7 @@ export class ItemService {
   watches:string|any=[{}];
   popular:string|any=[{}];
   all:string|any=[{}];
-  userID:string='';
+  userID:number=0;
   itemsByCatId:string|any=[{}];
   adminDashbard1:string|any=[{}];
   adminDashbard2:string|any=[{}];
@@ -141,10 +141,6 @@ export class ItemService {
 
       });
     }
-
-    
-
-     
   
     GetUserIdByEmail(uEmail:string|any) {
     this.http
@@ -173,17 +169,6 @@ export class ItemService {
         alert("User Profile Updated");
         });
     }
-
-    
-  
-  // insertbid(form:any){
-  //   form.userId = parseInt(form.userId);
-  //   form.itemId = parseInt(form.itemId)
-  //   console.log('done' , form);
-
-  
-
-
 
   GetItemBidsStatistics_AdminDash()
      {
@@ -258,4 +243,28 @@ export class ItemService {
     }
   }
 
-}
+
+
+  InsertCreditCard(creditCardForm:any) {
+    creditCardForm.creditCVC=parseInt(creditCardForm.creditCVC);
+  console.log(creditCardForm);
+    const headersDisc={
+      'content-type':'application/json',
+      'Accept':'application/json'
+    };
+    const requestOptions={
+      headers:new HttpHeaders(headersDisc),
+    };
+      this.http
+        .post('https://localhost:44361/api/CreditCard/InserCreditCard', creditCardForm,requestOptions)
+        .subscribe((res: any) => {
+          console.log(creditCardForm);
+          console.log("Credit Card Added seccessfully");
+          
+        });
+
+        
+    }
+  }
+
+

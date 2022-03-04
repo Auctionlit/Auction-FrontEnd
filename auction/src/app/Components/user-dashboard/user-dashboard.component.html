@@ -28,7 +28,11 @@
                         </li>
 
                         <li>
-                            <a [routerLink]="" (click)="AddNewItem()"><i class="flaticon-settings"></i>Add New Item </a>
+                            <a [routerLink]="" (click)="DisplayPaymentMethod()"><i class="flaticon-settings"></i>Payment Method </a>
+                        </li>
+
+                        <li>
+                            <a [routerLink]="" (click)="DispalyAddNewItem()"><i class="flaticon-settings"></i>Add New Item </a>
                         </li>
 
                         <li>
@@ -50,11 +54,11 @@
                 </div>
             </div>
             <div class="col-lg-8">
-                <div class="dashboard-widget mb-40" *ngIf="profileDisplay; else elseBlock">
-                    <div class="dashboard-title mb-30">
+                <div class="dashboard-widget mb-40" *ngIf="paymentMethodDisplay; else elseBlock2">
+                    <div class="dashboard-title mb-30" >
                         <h5 class="title">My Activity</h5>
                     </div>
-                    <div class="row justify-content-center mb-30-none">
+                    <div class="row justify-content-center mb-30-none"  *ngIf="profileDisplay; else elseBlock">
                         <div class="col-md-4 col-sm-6">
                             <div class="dashboard-item">
                                 <div class="thumb">
@@ -89,12 +93,17 @@
                             </div>
                         </div>
                     </div>
+                    <ng-template #elseBlock>
+                        <app-personal-profile> </app-personal-profile>
+                      </ng-template>
                 </div>
-                <ng-template #elseBlock>
-                    <app-personal-profile> </app-personal-profile>
+                <ng-template #elseBlock2>
+                    <app-payment-cart> </app-payment-cart>
                   </ng-template>
+                  
+
                 <div class="dashboard-widget" *ngIf="newItemDisplay; else elseBlock1">
-                    <h5 class="title mb-10">Purchasing</h5>
+                    <h5 class="title mb-10">My Bids</h5>
                     <div class="dashboard-purchasing-tabs">
                         <ul class="nav-tabs nav">
                             <li>
@@ -120,62 +129,7 @@
                                             <td data-purchase="lowest bid">$1,400.00</td>
                                             <td data-purchase="expires">7/2/2021</td>
                                         </tr>
-                                        <tr>
-                                            <td data-purchase="item">2018 Hyundai Sonata</td>
-                                            <td data-purchase="bid price">$1,775.00</td>
-                                            <td data-purchase="highest bid">$1,775.00</td>
-                                            <td data-purchase="lowest bid">$1,400.00</td>
-                                            <td data-purchase="expires">7/2/2021</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-purchase="item">2018 Hyundai Sonata</td>
-                                            <td data-purchase="bid price">$1,775.00</td>
-                                            <td data-purchase="highest bid">$1,775.00</td>
-                                            <td data-purchase="lowest bid">$1,400.00</td>
-                                            <td data-purchase="expires">7/2/2021</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-purchase="item">2018 Hyundai Sonata</td>
-                                            <td data-purchase="bid price">$1,775.00</td>
-                                            <td data-purchase="highest bid">$1,775.00</td>
-                                            <td data-purchase="lowest bid">$1,400.00</td>
-                                            <td data-purchase="expires">7/2/2021</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-purchase="item">2018 Hyundai Sonata</td>
-                                            <td data-purchase="bid price">$1,775.00</td>
-                                            <td data-purchase="highest bid">$1,775.00</td>
-                                            <td data-purchase="lowest bid">$1,400.00</td>
-                                            <td data-purchase="expires">7/2/2021</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-purchase="item">2018 Hyundai Sonata</td>
-                                            <td data-purchase="bid price">$1,775.00</td>
-                                            <td data-purchase="highest bid">$1,775.00</td>
-                                            <td data-purchase="lowest bid">$1,400.00</td>
-                                            <td data-purchase="expires">7/2/2021</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-purchase="item">2018 Hyundai Sonata</td>
-                                            <td data-purchase="bid price">$1,775.00</td>
-                                            <td data-purchase="highest bid">$1,775.00</td>
-                                            <td data-purchase="lowest bid">$1,400.00</td>
-                                            <td data-purchase="expires">7/2/2021</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-purchase="item">2018 Hyundai Sonata</td>
-                                            <td data-purchase="bid price">$1,775.00</td>
-                                            <td data-purchase="highest bid">$1,775.00</td>
-                                            <td data-purchase="lowest bid">$1,400.00</td>
-                                            <td data-purchase="expires">7/2/2021</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-purchase="item">2018 Hyundai Sonata</td>
-                                            <td data-purchase="bid price">$1,775.00</td>
-                                            <td data-purchase="highest bid">$1,775.00</td>
-                                            <td data-purchase="lowest bid">$1,400.00</td>
-                                            <td data-purchase="expires">7/2/2021</td>
-                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -184,14 +138,19 @@
                         </div>
                     </div>
                 </div>
+                <ng-template #elseBlock2>
+                    <app-payment-cart> </app-payment-cart>
+                  </ng-template>
 
                 <ng-template #elseBlock1>
                     <app-insert-item-form-dialog> </app-insert-item-form-dialog>
                   </ng-template>
             </div>
+            
         </div>
+        
     </div>
-
+    
 <!--============= Dashboard Section Ends Here =============-->
 
 <app-footer></app-footer>

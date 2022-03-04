@@ -35,6 +35,7 @@ import { JewelryComponent } from './Components/items/jewelry/jewelry.component';
 import { UpdateUserFromDialogComponent } from './/Components/update-user-from-dialog/update-user-from-dialog.component';
 import { InsertBidComponent } from './Components/insert-bid/insert-bid.component';
 import { AddNewEmployeeComponent } from './Components/add-new-employee/add-new-employee.component';
+import { PaymentCartComponent } from './Components/payment-cart/payment-cart.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { AddNewEmployeeComponent } from './Components/add-new-employee/add-new-e
     UpdateUserFromDialogComponent,
     InsertBidComponent,
     AddNewEmployeeComponent,
-    InsertBidComponent
+    InsertBidComponent,
+    PaymentCartComponent
     
   ],
   imports: [

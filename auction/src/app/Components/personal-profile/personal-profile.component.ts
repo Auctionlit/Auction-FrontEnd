@@ -18,15 +18,15 @@ export class PersonalProfileComponent implements OnInit {
     
     this.x=perProfileService.userData;
     this.uName=localStorage.getItem('username');
+    this.item.GetUserIdByEmail(this.uName);
     
-    item.GetUserIdByEmail(this.uName);
     
   }
 
   ngOnInit(): void {
     //this.uName=localStorage.getItem('username');
     
-    
+    console.log("The userId is:" + this.item.userID);
   }  
 
   Logout()
