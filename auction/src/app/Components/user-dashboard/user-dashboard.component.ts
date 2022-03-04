@@ -14,12 +14,14 @@ export class UserDashboardComponent implements OnInit {
   profileDisplay=true;
   newItemDisplay=true;
   paymentMethodDisplay=true;
+  userId:any = localStorage.getItem('userId');
  
-
-  constructor(private router:Router,private perProfileService:PersonalProfileService,private item:ItemService) { 
+  constructor(private router:Router,private perProfileService:PersonalProfileService, public item:ItemService) { 
     this.uName=localStorage.getItem('username')
     console.log("uName");
-   
+    this.userId=parseInt(this.userId);
+    this.item.GetAllData();
+    this.item.GetUserBids(this.userId);
   }
 
   ngOnInit(): void {
