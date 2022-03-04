@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { ItemService } from 'src/app/item.service';
 import { PersonalProfileService } from 'src/app/personal-profile.service';
 
 @Component({
@@ -12,12 +13,15 @@ export class UserDashboardComponent implements OnInit {
   uName:string|any='';
   profileDisplay=true;
   newItemDisplay=true;
+  userId:any = localStorage.getItem('userId');
  
 
-  constructor(private router:Router,private perProfileService:PersonalProfileService) { 
+  constructor(private router:Router,private perProfileService:PersonalProfileService, public item:ItemService) { 
     this.uName=localStorage.getItem('username')
     console.log("uName");
-   
+    this.userId=parseInt(this.userId);
+    this.item.GetAllData();
+    this.item.GetUserBids(this.userId);
   }
 
   ngOnInit(): void {

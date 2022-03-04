@@ -23,6 +23,7 @@ export class ItemService {
   adminDashbard3:string|any=[{}];
   adminDashbard4:string|any={};
   adminDashbard5:string|any={};
+  userBids:any=[{}];
   
 
   uEmail = localStorage.getItem('username');
@@ -237,6 +238,16 @@ export class ItemService {
         console.log(this.adminDashbard5);
       });
      }
+
+     GetUserBids(custId:number) {
+      this.http
+        .get<IItem[]>('https://localhost:44361/api/ItemAuction/getitembyCustId/'+ custId)
+        .subscribe((res: any) => {
+          this.userBids = res;
+          console.log(this.userBids);
+  
+        });
+    }
 
 
   insertbid(form: any) {
