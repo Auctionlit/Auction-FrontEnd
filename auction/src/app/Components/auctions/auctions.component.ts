@@ -18,6 +18,7 @@ export class AuctionsComponent implements OnInit {
 
   constructor(public item:ItemService ,public dialog: MatDialog) {
     this.item.GetAllData();
+    this.item.GetMost3PopularData();
   }
 
   ngOnInit(): void {

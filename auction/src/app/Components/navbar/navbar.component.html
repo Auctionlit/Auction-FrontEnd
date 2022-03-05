@@ -70,8 +70,8 @@
                         <a href="/contact">Contact</a>
                     </li>
                 </ul>
-                <form class="search-form">
-                    <input type="text" placeholder="Search for brand, model....">
+                <form class="search-form" [formGroup]="form" (ngSubmit)="getvalue()">
+                    <input type="text" placeholder="Search for brand, model...." formControlName="name">
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
                 <div class="search-bar d-md-none">

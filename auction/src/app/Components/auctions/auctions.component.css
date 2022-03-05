@@ -4,3 +4,9 @@
 ::ng-deep .nice-select{
     display:none !important;
 }
+
+.auction-thumb{ 
+    height: 250px;
+    }
+    
+    

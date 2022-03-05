@@ -15,7 +15,7 @@ export class InsertItemFormDialogComponent implements OnInit {
     name: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required]),
     startprice: new FormControl('', [Validators.required]),
-    userid: new FormControl('', [Validators.required]),
+    userid: new FormControl(localStorage.getItem('userId'), [Validators.required]),
     end_date: new FormControl('', [Validators.required]),
     imgpath:new FormControl('', [Validators.required]),
     catId: new FormControl('', [Validators.required]),

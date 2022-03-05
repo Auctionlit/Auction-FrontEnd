@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ItemService } from 'src/app/item.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   mySubscription: any;
-  constructor() {
+  form = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+  });
+  constructor(public item:ItemService) {
    
   
    }
@@ -16,5 +20,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
+  getvalue() {
+    console.log(this.form.value.name);
+    this.item.GetItemByName(this.form.value.name);
+  }
 }

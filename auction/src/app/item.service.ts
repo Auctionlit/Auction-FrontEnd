@@ -15,6 +15,7 @@ export class ItemService {
   coins:string|any=[{}];
   watches:string|any=[{}];
   popular:string|any=[{}];
+  popular3:string|any=[{}];
   all:string|any=[{}];
   userID:number=0;
   itemsByCatId:string|any=[{}];
@@ -37,7 +38,9 @@ export class ItemService {
 
   inseritem(form: any) {
     form.imgpath = this.imageName;
+    form.userid=parseInt(form.userid);
     form.catId = parseInt(form.catId);
+    console.log(form);
     this.http
       .post('https://localhost:44361/api/ItemAuction', form)
       .subscribe((res) => {
@@ -102,6 +105,17 @@ export class ItemService {
 
       });
   }
+
+  GetMost3PopularData() {
+    this.http
+      .get<IItem[]>('https://localhost:44361/api/ItemAuction/getMostPopular')
+      .subscribe((res: any) => {
+        this.popular3 = res;
+        console.log(this.popular3);
+
+      });
+    }
+    
   GetAllData() {
     this.http
       .get<IItem[]>('https://localhost:44361/api/ItemAuction/GetAllItems')

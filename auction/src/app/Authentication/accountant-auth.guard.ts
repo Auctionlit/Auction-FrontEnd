@@ -14,7 +14,7 @@ export class AccountantAuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       
       var roleName=localStorage.getItem('Role');
-      if(roleName =='21')
+      if(roleName =='41')
            {  
               
               return true;
