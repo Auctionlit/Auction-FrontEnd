@@ -22,6 +22,11 @@ export class UserDashboardComponent implements OnInit {
     this.userId=parseInt(this.userId);
     this.item.GetAllData();
     this.item.GetUserBids(this.userId);
+    this.item.GetEndedItems();
+    this.item.GetCountOfwin(this.userId);
+    this.item.GetCountOfBids(this.userId);
+    this.item.GetCountOfItem(this.userId);
+    
   }
 
   ngOnInit(): void {

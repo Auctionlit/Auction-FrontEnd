@@ -25,6 +25,10 @@ export class ItemService {
   adminDashbard4:string|any={};
   adminDashbard5:string|any={};
   userBids:any=[{}];
+  EndedItems:any=[{}];
+  userItems:any=[{}];
+  userItemsWin:any=[{}];
+  userItemsBid:any=[{}];
   
 
   uEmail = localStorage.getItem('username');
@@ -246,6 +250,42 @@ export class ItemService {
           console.log(this.userBids);
   
         });
+    }
+    GetEndedItems()
+    {
+     this.http
+     .get('https://localhost:44361/api/users/GetItemEnded')
+     .subscribe((res: any) => {
+       this.EndedItems = res;
+       console.log(this.EndedItems);
+     });
+    }
+    GetCountOfItem(uId:number)
+    {
+     this.http
+     .get('https://localhost:44361/api/users/GetCountOfItem/'+ uId)
+     .subscribe((res: any) => {
+       this.userItems = res;
+       console.log(this.userItems);
+     });
+    }
+    GetCountOfwin(uId:number)
+    {
+     this.http
+     .get('https://localhost:44361/api/users/GetCountOfwen/'+ uId)
+     .subscribe((res: any) => {
+       this.userItemsWin = res;
+       console.log(this.userItemsWin);
+     });
+    }
+    GetCountOfBids(uId:number)
+    {
+     this.http
+     .get('https://localhost:44361/api/users/GetCountOfBids/'+ uId)
+     .subscribe((res: any) => {
+       this.userItemsBid = res;
+       console.log(this.userItemsBid);
+     });
     }
 
 

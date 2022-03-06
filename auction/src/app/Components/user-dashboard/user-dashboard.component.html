@@ -65,7 +65,7 @@
                                     <img src="./../../../assets/images/dashboard/01.png" alt="dashboard">
                                 </div>
                                 <div class="content">
-                                    <h2 class="title"><span class="counter">80</span></h2>
+                                    <h2 class="title" *ngFor="let item of item.userItems">{{item.numofuserbids}}</h2>
                                     <h6 class="info">Active Bids</h6>
                                 </div>
                             </div>
@@ -76,8 +76,8 @@
                                     <img src="./../../../assets/images/dashboard/02.png" alt="dashboard">
                                 </div>
                                 <div class="content">
-                                    <h2 class="title"><span class="counter">15</span></h2>
-                                    <h6 class="info">Items Won</h6>
+                                    <h2 class="title" *ngFor="let item of item.userItemsBid">{{item.numofuseritem}}</h2>
+                                    <h6 class="info">Items Bid</h6>
                                 </div>
                             </div>
                         </div>
@@ -87,8 +87,8 @@
                                     <img src="./../../../assets/images/dashboard/03.png" alt="dashboard">
                                 </div>
                                 <div class="content">
-                                    <h2 class="title"><span class="counter">115</span></h2>
-                                    <h6 class="info">Favorites</h6>
+                                    <h2 class="title" *ngFor="let item of item.userItemsWin">{{item.countofwin}}</h2>
+                                    <h6 class="info">Items Won</h6>
                                 </div>
                             </div>
                         </div>
@@ -171,13 +171,13 @@
                                         <th>Expires</th>
                                     </thead>
                                     <tbody>
-                                        <ng-container *ngFor="let item of item.all">
+                                        <ng-container *ngFor="let item of item.EndedItems">
                                             <tr *ngIf="item.userId == userId">
                                                 <td data-purchase="item">{{item.name}}</td>
                                                 <td data-purchase="bid price">${{item.startPrice}}</td>
                                                 <td data-purchase="highest bid">${{item.maxPrice}}</td>
                                                 <td data-purchase="Number Of Bids">{{item.numOfBids}}</td>
-                                                <td data-purchase="expires">{{item.end_Date |date:'MM-dd-yyyy'}}</td>
+                                                <td data-purchase="expires">{{item.end_Date | date:'MM-dd-yyyy'}}</td>
                                             </tr>
                                         </ng-container>
                                     </tbody>
