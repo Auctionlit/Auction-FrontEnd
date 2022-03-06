@@ -35,11 +35,14 @@
                 </div>
                 <ul class="menu ml-auto">
                     <li>
-                        <a href="/">Home</a>
+                        <a [routerLink]="" (click)="reloadCurrentRoute(homeTab)">Home</a>
                        
                     </li>
-                    <li>
-                        <a href="/auction">Auction</a>
+                    <li>"
+                      <!-- <a [routerLink]="'/auction'"> Auction</a>  -->
+                      <a [routerLink]="" (click)="reloadCurrentRoute(auctionTab)"> Auction</a>
+                         
+                      
                     </li>
                     <li>
                         <a href="#0">Pages</a>
@@ -49,25 +52,25 @@
                                 <a href="#0">My Account</a>
                                 <ul class="submenu">
                                     <li>
-                                        <a href="/account/register">Sign Up</a>
+                                        <a [routerLink]="" (click)="reloadCurrentRoute(signUpTab)">Sign Up</a>
                                     </li>
                                     <li>
-                                        <a href="/account/login">Sign In</a>
+                                        <a [routerLink]="" (click)="reloadCurrentRoute(signInTab)">Sign In</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="/account/login">Dashboard</a>
+                                <a [routerLink]="" (click)="reloadCurrentRoute(dashboardTab)">Dashboard</a>
                                 
                             </li>
                             <li>
-                                <a href="/aboutus">About Us</a>
+                                <a [routerLink]="" (click)="reloadCurrentRoute(aboutusTab)">About Us</a>
                             </li>
                             
                         </ul>
                     </li>
                     <li>
-                        <a href="/contact">Contact</a>
+                        <a [routerLink]="" (click)="reloadCurrentRoute(contactTab)">Contact</a>
                     </li>
                 </ul>
                 <form class="search-form" [formGroup]="form" (ngSubmit)="getvalue()">

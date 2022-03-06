@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { NavigationEnd, Router } from '@angular/router';
 import { ItemService } from 'src/app/item.service';
 import { InsertBidComponent } from '../insert-bid/insert-bid.component';
 
@@ -10,19 +11,17 @@ import { InsertBidComponent } from '../insert-bid/insert-bid.component';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public item:ItemService, public dialog: MatDialog) { 
+  constructor(public item:ItemService, public dialog: MatDialog,private router:Router) { 
 
     this.item.GetCarsData();
     this.item.GetCoinsData();
     this.item.GetMostPopularData();
     this.item.GetWatchesData();
     this.item.GetJewelryData();
-    
-    
-
   }
 
   ngOnInit(): void {
+    
   }
 
   openDialog(itemId:any) {

@@ -14,7 +14,8 @@ const routes: Routes = [{path:'',component:HomeComponent},
 {path:'cars',component:CarsComponent},
 {path:'coins',component:CoinsComponent},
 {path:'jewelry',component:JewelryComponent},
-{path:'watches',component:WatchesComponent}
+{path:'watches',component:WatchesComponent} 
+
 
 ];
 
