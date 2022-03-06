@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ItemService } from 'src/app/item.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,7 @@ export class NavbarComponent implements OnInit {
   form = new FormGroup({
     name: new FormControl('', [Validators.required]),
   });
-  constructor(public item:ItemService) {
+  constructor(public item:ItemService,public router:Router) {
    
   
    }
@@ -23,5 +24,18 @@ export class NavbarComponent implements OnInit {
   getvalue() {
     console.log(this.form.value.name);
     this.item.GetItemByName(this.form.value.name);
+  }
+  root(){
+    if (localStorage.getItem("Role")== '1') {
+      this.router.navigate(['dashboard/Admin/']);
+    }
+    
+    if (localStorage.getItem("Role")== '2') {
+      this.router.navigate(['dashboard/User/']);
+    }
+    
+    if (localStorage.getItem("Role")== '41') {
+      this.router.navigate(['dashboard/Accountant/']);
+    }
   }
 }
